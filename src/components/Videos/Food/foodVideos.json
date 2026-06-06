@@ -1,0 +1,50 @@
+[
+  { 
+    "id": 1, 
+    "title": "Kitchen", 
+    "thumbnail": "/images/food/Kitchen.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/w7lgzD0etIA\" title=\"Rigi Kitchen\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  { 
+    "id": 2, 
+    "title": "Christmas Table", 
+    "thumbnail": "/images/food/Christmas-table.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/octDr6zcp48\" title=\"Rigi Christmas Table\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  { 
+    "id": 3, 
+    "title": "Valentine's Day", 
+    "thumbnail": "/images/food/Valentines-day-2.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/fSrNwJRUCJM\" title=\"Puri Guliani valentine's day 2\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  { 
+    "id": 4, 
+    "title": "Motion", 
+    "thumbnail": "/images/food/Motion.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/YDWWnCpNREQ\" title=\"Puri Guliani Motion\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  { 
+    "id": 5, 
+    "title": "Valentine's Day 2", 
+    "thumbnail": "/images/food/Valentines-day-3.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/JpqlR8giwC8\" title=\"Puri Guliani valentine's day 2\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  { 
+    "id": 6, 
+    "title": "Collage", 
+    "thumbnail": "/images/food/9.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/q10bx-ENaQE\" title=\"Puri Guliani 9\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  { 
+    "id": 7, 
+    "title": "Exchange", 
+    "thumbnail": "/images/food/Valentines-day-1.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/UUuLy8xuGXY\" title=\"Puri Guliani Exchange\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  { 
+    "id": 8, 
+    "title": "Fresh Drinks", 
+    "thumbnail": "/images/food/Fresh-drinks.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/VgG8xtoV7xc\" title=\"Puri Guliani Fresh Drinks\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  }
+]
