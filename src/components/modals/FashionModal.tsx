@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X } from 'lucide-react';
 
 // Import the data directly from your JSON file
-import VIDEOS from '../Videos/Fashion/videos.json'; 
+import VIDEOS from '../Videos/Fashion/fashionVideos.json'; 
 
 const FashionModal = () => {
   // State to track the currently selected video ID for the popup

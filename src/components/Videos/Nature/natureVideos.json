@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Farm Main",
+    "thumbnail": "/images/Kiketi Farm Main.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/PG0O_Xp3bi8?autoplay=1&rel=0&modestbranding=1\" title=\"Kiketi Farm Main\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 2,
+    "title": "Farm TreeHouse",
+    "thumbnail": "/images/Kiketi Farm TreeHouse.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/a2qPL3v5e78?autoplay=1&rel=0&modestbranding=1\" title=\"Kiketi Farm TreeHouse\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 3,
+    "title": "Farm Workshop",
+    "thumbnail": "/images/Kiketi Farm Workshop.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/1whv6YBKquo?autoplay=1&rel=0&modestbranding=1\" title=\"Kiketi Farm Workshop\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 4,
+    "title": "Farm Friends",
+    "thumbnail": "/images/Kiketi Farm Friends.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/3Fz1ROfEYr8?autoplay=1&rel=0&modestbranding=1\" title=\"Kiketi Farm Friends\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 5,
+    "title": "Sunset",
+    "thumbnail": "/images/villa-mosavali-sunset.jpeg",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/DmO12WGiqZs?autoplay=1&rel=0&modestbranding=1\" title=\"Villa Mosavali Sunset\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  }
+]
