@@ -7,6 +7,7 @@ import NatureModal from './modals/NatureModal';
 import TravelModal from './modals/TravelModal';
 import SocialsModal from './modals/SocialsModal';
 import CVModal from './modals/CVModal';
+import TinnaVideoModal from './modals/TinnaVideoModal';
 
 const MENU_ITEMS = [
   // Angles adjusted to match the exact positions in your screenshot
@@ -146,12 +147,13 @@ const HeroPlate = () => {
 
       {/* Desktop Folders - Bottom Right Corner */}
       <div className="absolute bottom-8 right-8 flex flex-col gap-6 z-30 pointer-events-none">
-        {/* Tinna Folder (Decorative or placeholder) */}
+        {/* Tinna Folder (Interactive Video) */}
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.2 }}
-          className="group pointer-events-auto cursor-help flex flex-col items-center gap-1"
+          onClick={() => setActiveModal('archive')}
+          className="group pointer-events-auto cursor-pointer flex flex-col items-center gap-1"
         >
           <img src="/images/content/tinna-folder.svg" alt="Portfolio Folder" className="w-16 h-16 md:w-20 md:h-20 drop-shadow-lg transition-transform group-hover:scale-110" />
         </motion.div>
@@ -200,6 +202,7 @@ const HeroPlate = () => {
                 {activeModal === 'travel' && <div className="p-8 md:p-16"><TravelModal /></div>}
                 {activeModal === 'socials' && <div className="p-8 md:p-16"><SocialsModal /></div>}
                 {activeModal === 'cv' && <CVModal />}
+                {activeModal === 'archive' && <TinnaVideoModal />}
                 {/* {activeModal === 'photography' && <div className="p-8 md:p-16"><PhotographyModal /></div>} */}
               </div>
             </motion.div>
