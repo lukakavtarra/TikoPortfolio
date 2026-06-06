@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Meraki Shoot",
+    "thumbnail": "/images/Meraki witeli kaba.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/1Vra-3cb0wM?autoplay=1&rel=0&modestbranding=1\" title=\"Meraki shoot\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+{
+    "id": 2,
+    "title": "Meraki RED street",
+    "thumbnail": "/images/Meraki Red Street.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/lCQbtklckoc?autoplay=1&rel=0&modestbranding=1\" title=\"Meraki RED street\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 3,
+    "title": "Meraki Yellow static",
+    "thumbnail": "/images/Meraki Yellow Static.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/zrfP9b_PLvc?autoplay=1&rel=0&modestbranding=1\" title=\"Meraki Yellow static\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 4,
+    "title": "Meraki Yellow dress",
+    "thumbnail": "/images/Meraki Yellow Dress.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/sELTCzpmArk?autoplay=1&rel=0&modestbranding=1\" title=\"Meraki Yellow dress\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 5,
+    "title": "Meraki Red",
+    "thumbnail": "/images/Meraki Red.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/wzfjuiMn-HY?autoplay=1&rel=0&modestbranding=1\" title=\"Meraki Red\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 6,
+    "title": "Meraki side scrolling",
+    "thumbnail": "/images/Meraki Side Scrolling.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/CQ-PzfD6Xjs?autoplay=1&rel=0&modestbranding=1\" title=\"Meraki side scrolling\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 7,
+    "title": "Meraki 9 in 1",
+    "thumbnail": "/images/Meraki 9 in 1.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/7KxQqrozbHg?autoplay=1&rel=0&modestbranding=1\" title=\"Meraki 9 in 1\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 8,
+    "title": "Meraki Static Fan",
+    "thumbnail": "/images/Meraki Static Fan.png",
+    "iframeCode": "<iframe class=\"w-full h-full absolute inset-0\" src=\"https://www.youtube.com/embed/fv3lQwHqL1o?autoplay=1&rel=0&modestbranding=1\" title=\"Meraki Static Fan\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  }
+]
