@@ -1,52 +1,68 @@
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { FaInstagram, FaYoutube, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
-const SOCIALS = [
-  { id: 'instagram', icon: FaInstagram, label: 'Instagram', handle: '@tikobakuradzee', color: 'text-[#ff007f]', bg: 'bg-[#ff007f]/10', border: 'border-[#ff007f]/20', glow: 'shadow-[#ff007f]/30' },
-  { id: 'youtube', icon: FaYoutube, label: 'YouTube', handle: 'Tinatin Bakuradze', color: 'text-[#ff5e00]', bg: 'bg-[#ff5e00]/10', border: 'border-[#ff5e00]/20', glow: 'shadow-[#ff5e00]/30' },
-  { id: 'linkedin', icon: FaLinkedin, label: 'LinkedIn', handle: 'Tinatin Bakuradze', color: 'text-[#00e5ff]', bg: 'bg-[#00e5ff]/10', border: 'border-[#00e5ff]/20', glow: 'shadow-[#00e5ff]/30' },
-  { id: 'twitter', icon: FaTwitter, label: 'Twitter / X', handle: '@tinatin_b', color: 'text-[#7000ff]', bg: 'bg-[#7000ff]/10', border: 'border-[#7000ff]/20', glow: 'shadow-[#7000ff]/30' },
-];
+interface SocialsModalProps {
+  onClose?: () => void;
+}
 
-const SocialsModal = () => {
+const SocialsModal: React.FC<SocialsModalProps> = ({ onClose }) => {
+  const instagramVideoSrc = '/images/socials/instagram.mp4'; 
+  
+  // 1. Create a reference to control the video directly
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Explicitly acknowledge onClose
+  }, [onClose]);
+
+  // 2. Force autoplay on mount (helps bypass strict browser policies)
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((err) => {
+        console.warn("Autoplay prevented by browser:", err);
+      });
+    }
+  }, []);
+
   return (
-    <div className="flex flex-col h-full w-full max-w-4xl mx-auto">
-      <div className="mb-12 text-center">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-4"
-        >
-          Let's <span className="text-[#00e5ff]">Vibe</span>
-        </motion.h2>
-        <p className="text-neutral-400 font-bold tracking-widest uppercase text-xs">Connect with me across the digital space</p>
-      </div>
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0, y: 20 }}
+      animate={{ scale: 1, opacity: 1, y: 0 }}
+      exit={{ scale: 0.8, opacity: 0, y: 20 }}
+      transition={{ duration: 0.3, type: "spring", bounce: 0.4 }}
+      className="relative h-[85vh] max-w-[95vw] aspect-[15/19] bg-transparent rounded-[2rem] shadow-2xl overflow-hidden mx-auto"
+      onClick={(e) => e.stopPropagation()} 
+    >
+      
+      <a 
+        href="https://www.instagram.com/tikobakuradzee/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="absolute inset-0 block w-full h-full cursor-pointer group"
+      >
+        <video
+          ref={videoRef} // Attach the ref
+          onEnded={() => {
+            // 3. THE FIX: When the video ends, manually reset and play
+            if (videoRef.current) {
+              videoRef.current.currentTime = 0;
+              videoRef.current.play();
+            }
+          }}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          src={instagramVideoSrc}
+          loop // Keep the native attribute as a fallback
+          autoPlay
+          muted
+          playsInline
+          title="Instagram Video"
+        />
+        
+        {/* Subtle hover effect */}
+        <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-300" />
+      </a>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
-        {SOCIALS.map((social, idx) => (
-          <motion.a
-            key={social.id}
-            href="#"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: idx * 0.1 }}
-            whileHover={{ scale: 1.05, y: -5 }}
-            whileTap={{ scale: 0.95 }}
-            className={`flex items-center gap-6 p-8 rounded-3xl ${social.bg} border ${social.border} transition-all group relative overflow-hidden`}
-          >
-            <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 blur-3xl rounded-full -mr-10 -mt-10 group-hover:bg-white/10 transition-all"></div>
-            
-            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-white ${social.color} bg-black/40 border border-white/10 shadow-xl`}>
-              <social.icon size={32} />
-            </div>
-            <div>
-              <h3 className={`font-black text-2xl uppercase tracking-tighter text-white group-hover:${social.color} transition-colors`}>{social.label}</h3>
-              <p className="text-neutral-400 font-medium">{social.handle}</p>
-            </div>
-          </motion.a>
-        ))}
-      </div>
-    </div>
+    </motion.div>
   );
 };
 

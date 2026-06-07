@@ -18,7 +18,7 @@ const MENU_ITEMS = [
   { id: 'food', img: '/images/content/food.png', label: 'Flavor', angle: -120 },
   { id: 'fashion', img: '/images/content/shirt.png', label: 'Look Book', angle: -35 },
   { id: 'socials', img: '/images/content/phone.svg', label: 'Socials', angle: 20 },
-  { id: 'mandarin', img: '/images/content/photo.png', label: 'Mandarin', angle: 80 },
+  { id: 'mandarin', img: '/images/content/camera.png', label: 'Mandarin', angle: 80 },
   { id: 'care', img: '/images/content/comb.png', label: 'Daily Glow', angle: 135 },
   { id: 'nature', img: '/images/content/flower.png', label: 'Open air', angle: 180 },
   // { id: 'wine', img: '/images/content/wine.svg', label: 'Wine', angle: 270 },
