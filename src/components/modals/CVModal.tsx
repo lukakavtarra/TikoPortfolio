@@ -16,12 +16,12 @@ const PAGE_ASSETS = [page1, page2, page3, page4];
  */
 const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number: number }>((props, ref) => {
   return (
-    <div className="page relative overflow-hidden h-full" ref={ref}>
+    <div className="page relative overflow-hidden h-full" ref={ref}> {/* Removed shadow-2xl and bg-white */}
       <div className="page-content flex flex-col h-full relative z-10">
         {props.children}
       </div>
       {/* 3D Page Shading */}
-      <div className="absolute inset-0 pointer-events-none via-transparent to-black/10 z-20" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-black/5 via-transparent to-black/10 z-20" />
     </div>
   );
 });
@@ -37,9 +37,7 @@ const CVModal = () => {
   return (
     <div className="relative w-full h-full overflow-hidden flex flex-col items-center justify-center">
       
-      {/* Background is handled by the parent modal wrapper in HeroPlate.tsx 
-          (the bg-transparent backdrop-blur-[40px]) to match other modals. 
-          We remove the custom rotating background from here as requested. */}
+      {/* Background is handled by the parent modal wrapper in HeroPlate.tsx */}
 
       {/* LAYER 2: THE 3D BOOK */}
       <div className="relative z-10 w-full max-w-[1100px] flex flex-col items-center gap-8 px-4">
@@ -57,11 +55,11 @@ const CVModal = () => {
             showCover={true}
             onFlip={onFlip}
             ref={bookRef}
-            className="shadow-[0_50px_100px_rgba(0,0,0,0.8)]"
+            // Removed className="shadow-[0_50px_100px_rgba(0,0,0,0.8)]"
             flippingTime={1000}
             usePortrait={false} 
             startPage={0}
-            drawShadow={true}
+            drawShadow={false}
             autoSize={true}
             mobileScrollSupport={true}
             clickEventForward={true}
@@ -84,7 +82,7 @@ const CVModal = () => {
         </div>
 
         {/* NAVIGATION CONTROLS */}
-        <div className="flex items-center gap-8 bg-black/40 backdrop-blur-xl px-8 py-3 rounded-full border border-white/10 shadow-2xl z-20">
+        <div className="flex items-center gap-8 z-20"> {/* Simplified styling */}
           <button 
             onClick={() => bookRef.current.pageFlip().flipPrev()} 
             className="text-white/40 hover:text-white transition-all hover:scale-110 active:scale-90"
@@ -120,7 +118,7 @@ const CVModal = () => {
         }
         .page {
           box-sizing: border-box;
-          background-color: white;
+          background-color: transparent; /* Changed to transparent */
         }
         /* Mobile specific portrait override */
         @media (max-width: 767px) {

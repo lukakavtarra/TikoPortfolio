@@ -11,15 +11,16 @@ import TinnaVideoModal from './modals/TinnaVideoModal';
 import RememberModal from './modals/RememberModal';
 import TheStayModal from './modals/TheStayModal';
 import BackstageModal from './modals/BackstageModal';
+import MandarinModal from './modals/MandarinModal';
 
 const MENU_ITEMS = [
   // Angles adjusted to match the exact positions in your screenshot
-  { id: 'food', img: '/images/content/food.svg', label: 'Flavor', angle: -120 },
-  { id: 'fashion', img: '/images/content/shirt.svg', label: 'Look Book', angle: -35 },
+  { id: 'food', img: '/images/content/food.png', label: 'Flavor', angle: -120 },
+  { id: 'fashion', img: '/images/content/shirt.png', label: 'Look Book', angle: -35 },
   { id: 'socials', img: '/images/content/phone.svg', label: 'Socials', angle: 20 },
-  { id: 'photography', img: '/images/content/camera.svg', label: 'Photography', angle: 80 },
+  { id: 'mandarin', img: '/images/content/photo.png', label: 'Mandarin', angle: 80 },
   { id: 'care', img: '/images/content/comb.png', label: 'Daily Glow', angle: 135 },
-  { id: 'nature', img: '/images/content/flower.svg', label: 'Open air', angle: 180 },
+  { id: 'nature', img: '/images/content/flower.png', label: 'Open air', angle: 180 },
   // { id: 'wine', img: '/images/content/wine.svg', label: 'Wine', angle: 270 },
 ];
 
@@ -233,7 +234,7 @@ const HeroPlate = () => {
                 whileHover={{ scale: 1.15, zIndex: 40 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveModal(item.id)}
-                className="absolute z-20 w-12 h-12 md:w-36 md:h-36 group cursor-pointer pointer-events-auto"
+                className="absolute z-20 w-12 h-12 md:w-40 md:h-40 group cursor-pointer pointer-events-auto"
               >
                 {/* Counter-rotate each icon so it stays perfectly upright */}
                 <motion.div style={{ rotate: counterRotation }} className="w-full h-full relative flex items-center justify-center">
@@ -371,7 +372,7 @@ const HeroPlate = () => {
                 {activeModal === 'archive' && <TinnaVideoModal />}
                 {activeModal === 'thestay' && <div className="p-8 md:p-16"><TheStayModal /></div>}
                 {activeModal === 'backstage' && <div className="p-8 md:p-16"><BackstageModal /></div>}
-                {/* {activeModal === 'photography' && <div className="p-8 md:p-16"><PhotographyModal /></div>} */}
+                {activeModal === 'mandarin' && <MandarinModal onClose={closeModal} />}
               </div>
             </motion.div>
           </motion.div>

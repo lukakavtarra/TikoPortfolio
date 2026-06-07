@@ -13,7 +13,7 @@ function App() {
       />
 
       {/* Floating Instruction Text */}
-      <div className="absolute bottom-8 w-full flex justify-center z-10 pointer-events-none">
+      {/* <div className="absolute bottom-8 w-full flex justify-center z-10 pointer-events-none">
         <motion.div
           animate={{ 
             y: [20, 20, 20],
@@ -29,7 +29,7 @@ function App() {
         >
           TAP EVERYTHING THAT MOVES
         </motion.div>
-      </div>
+      </div> */}
       
       {/* Main Component */}
       <div className="relative z-10 w-full h-full flex items-center justify-center">
