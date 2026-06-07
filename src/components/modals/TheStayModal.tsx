@@ -30,7 +30,7 @@ const TheStayModal = () => {
         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-2 italic">
           The <span style={{ color: ACCENT_COLOR }}>Stay</span>
         </h2>
-        <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">A Unique Guesthouse Experience</p>
+        <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">Hospitality</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">

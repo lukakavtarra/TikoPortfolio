@@ -28,9 +28,9 @@ const BackstageModal = () => {
       
       <div className="mb-10 text-right">
         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-2 italic">
-          Back<span style={{ color: ACCENT_COLOR }}>stage</span>
+          Left<span style={{ color: ACCENT_COLOR }}>overs</span>
         </h2>
-        <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">Behind the scenes & raw motion</p>
+        <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">Behind the scenes & some motions</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-6 gap-8 pb-10">
@@ -56,7 +56,7 @@ const BackstageModal = () => {
               >
                 <Play fill="black" size={24} className="ml-1 text-black" strokeWidth={3} />
               </div>
-              <h3 className="text-xl font-black text-white uppercase tracking-tighter transition-colors group-hover:text-[var(--hover-color)] none group-hover:block hidden">
+              <h3 className="text-xl font-black text-white uppercase tracking-tighter transition-colors group-hover:text-[var(--hover-color)]">
                 {video.title}
               </h3>
               <p className="text-neutral-400 text-xs font-bold uppercase tracking-widest mt-1 opacity-0 group-hover:opacity-100 transition-opacity">

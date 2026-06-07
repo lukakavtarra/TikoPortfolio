@@ -15,11 +15,11 @@ import BackstageModal from './modals/BackstageModal';
 const MENU_ITEMS = [
   // Angles adjusted to match the exact positions in your screenshot
   { id: 'food', img: '/images/content/food.svg', label: 'Flavor', angle: -120 },
-  { id: 'fashion', img: '/images/content/shirt.svg', label: 'Fashion', angle: -35 },
+  { id: 'fashion', img: '/images/content/shirt.svg', label: 'Look Book', angle: -35 },
   { id: 'socials', img: '/images/content/phone.svg', label: 'Socials', angle: 20 },
   { id: 'photography', img: '/images/content/camera.svg', label: 'Photography', angle: 80 },
   { id: 'care', img: '/images/content/comb.png', label: 'Daily Glow', angle: 135 },
-  { id: 'nature', img: '/images/content/flower.svg', label: 'Nature', angle: 180 },
+  { id: 'nature', img: '/images/content/flower.svg', label: 'Open air', angle: 180 },
   // { id: 'wine', img: '/images/content/wine.svg', label: 'Wine', angle: 270 },
 ];
 
@@ -328,7 +328,7 @@ const HeroPlate = () => {
             <img src="/images/content/trash bin.png" alt="Backstage Trash Bin" className="w-13 h-16 md:w-20 md:h-24 drop-shadow-2xl transition-transform group-hover:scale-110" />
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
               <span className="text-[10px] md:text-xs font-black uppercase tracking-widest bg-black/80 px-3 py-1.5 rounded-full backdrop-blur-md text-white border border-white/20 shadow-xl whitespace-nowrap">
-                Backstage
+                Leftovers
               </span>
             </div>
           </motion.div>

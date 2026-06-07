@@ -28,9 +28,9 @@ const RememberModal = () => {
       
       <div className="mb-10 text-right">
         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-2 italic">
-          Remem<span style={{ color: ACCENT_COLOR }}>ber</span>
+          The<span style={{ color: ACCENT_COLOR }}> Setting</span>
         </h2>
-        <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">Memories & Milestones</p>
+        <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">Memories & Table Talk</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">

@@ -7,15 +7,15 @@
   },
   {
     "id": 2,
-    "title": "Aversi Beauty blender",
-    "thumbnail": "/images/beauty/Aversi Beauty blender.png",
-    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/ZnrYLGIwOYg\" title=\"Aversi Beauty blender\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
-  },
-  {
-    "id": 3,
     "title": "Aversi Comb",
     "thumbnail": "/images/beauty/Aversi Comb.png",
     "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/CAuzJjRlUhw\" title=\"Aversi Comb\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 3,
+    "title": "Aversi Beauty blender",
+    "thumbnail": "/images/beauty/Aversi Beauty blender.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/ZnrYLGIwOYg\" title=\"Aversi Beauty blender\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
   },
   {
     "id": 4,
