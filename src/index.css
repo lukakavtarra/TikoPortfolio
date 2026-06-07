@@ -7,6 +7,13 @@
   --color-brand-accent: #e63946;
 }
 
+@font-face {
+  font-family: 'Andalemono';
+  src: url('/fonts/ANDALEMO.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   /* cursor: none !important; */
 }

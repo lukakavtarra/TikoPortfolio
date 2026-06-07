@@ -8,6 +8,7 @@ import TravelModal from './modals/TravelModal';
 import SocialsModal from './modals/SocialsModal';
 import CVModal from './modals/CVModal';
 import TinnaVideoModal from './modals/TinnaVideoModal';
+import RememberModal from './modals/RememberModal';
 
 const MENU_ITEMS = [
   // Angles adjusted to match the exact positions in your screenshot
@@ -31,12 +32,39 @@ const HeroPlate = () => {
   });
 
   useEffect(() => {
+    let rafId: number;
+    let manualRotation = 0; // Track manual scroll separately
+    let startTime = performance.now();
+
+    // Auto-rotation loop (Swaying back and forth)
+    const autoRotate = (time: number) => {
+      if (!activeModal) {
+        // Calculate a gentle sine wave based on elapsed time
+        const elapsed = time - startTime;
+        // Adjust the multiplier to change the speed, and the amplitude (5) for how far it sways
+        const sway = Math.sin(elapsed * 0.0005) * 5; 
+
+        // Combine manual scroll offset with the continuous sway
+        rotationValue.set(manualRotation + sway);
+      }
+      rafId = requestAnimationFrame(autoRotate);
+    };
+
+    rafId = requestAnimationFrame(autoRotate);
+
     const handleWheel = (e: WheelEvent) => {
       if (activeModal) return;
-      rotationValue.set(rotationValue.get() + e.deltaY * 0.4);
+      // Update the base manual rotation so the sway continues from the new point
+      manualRotation += e.deltaY * 0.4;
+      // Immediately reflect the scroll for responsiveness
+      rotationValue.set(manualRotation);
     };
     window.addEventListener('wheel', handleWheel, { passive: true });
-    return () => window.removeEventListener('wheel', handleWheel);
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      cancelAnimationFrame(rafId);
+    };
   }, [activeModal, rotationValue]);
 
   const closeModal = () => setActiveModal(null);
@@ -44,23 +72,57 @@ const HeroPlate = () => {
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center">
       
-      {/* 1. Flanking Cutlery (Locked to left and right) */}
-      <motion.img 
-        src="/images/content/fork.png" 
-        alt="Fork" 
-        className="absolute left-[5%] md:left-[15%] top-1/2 -translate-y-1/2 h-[50%] md:h-[70%] w-auto z-0 drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)]"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.8 }}
-      />
-      <motion.img 
-        src="/images/content/knife.png" 
-        alt="Knife" 
-        className="absolute right-[5%] md:right-[15%] top-1/2 -translate-y-1/2 h-[50%] md:h-[70%] w-auto z-0 drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)]"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.8 }}
-      />
+      {/* Header */}
+      <motion.div 
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="absolute top-8 md:top-12 left-0 w-full text-center z-10 pointer-events-none"
+      >
+        <h1 className="text-3xl md:text-2xl lg:text-4xl text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]" style={{ fontFamily: 'Andalemono, monospace' }}>
+          WHAT I'M SERVING IN THIS LIFE...
+        </h1>
+      </motion.div>
+      
+      {/* 1. Flanking Cutlery */}
+      <motion.div
+        animate={{ rotate: [-3, 3, -3] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-0 md:left-[26%] top-1/2 -translate-y-1/2 h-[40%] md:h-[50%] z-20 pointer-events-none"
+      >
+        <motion.div 
+          className="relative w-full h-full group cursor-pointer pointer-events-auto flex items-center justify-end pr-4 md:pr-0"
+          onClick={() => setActiveModal('remember')}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <img 
+            src="/images/content/fork.svg" 
+            alt="Fork" 
+            className="h-full w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)] group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300"
+          />
+          {/* Label positioned over the fork */}
+          <div className="absolute top-1/2 left-full md:left-auto md:right-full ml-4 md:ml-0 md:mr-8 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span className="text-[12px] md:text-sm font-black tracking-[0.2em] uppercase bg-black/80 px-4 py-2 rounded-full backdrop-blur-md text-white border border-white/20 shadow-2xl whitespace-nowrap">
+              Remember
+            </span>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        animate={{ rotate: [3, -3, 3] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute right-0 md:right-[26%] top-1/2 -translate-y-1/2 h-[40%] md:h-[50%] z-0 pointer-events-none flex items-center justify-start pl-4 md:pl-0"
+      >
+        <motion.img 
+          src="/images/content/knife.svg" 
+          alt="Knife" 
+          className="h-full w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)]"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.8 }}
+        />
+      </motion.div>
 
       {/* 2. Main Plate Layout */}
       {/* Scaled up slightly to match the bold look of the screenshot */}
@@ -148,25 +210,35 @@ const HeroPlate = () => {
       {/* Desktop Folders - Bottom Right Corner */}
       <div className="absolute bottom-8 right-8 flex flex-col gap-6 z-30 pointer-events-none">
         {/* Tinna Folder (Interactive Video) */}
-        <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.2 }}
-          onClick={() => setActiveModal('archive')}
-          className="group pointer-events-auto cursor-pointer flex flex-col items-center gap-1"
+        <motion.div
+          animate={{ rotate: [-3, 3, -3] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         >
-          <img src="/images/content/tinna-folder.svg" alt="Portfolio Folder" className="w-16 h-16 md:w-20 md:h-20 drop-shadow-lg transition-transform group-hover:scale-110" />
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.2 }}
+            onClick={() => setActiveModal('archive')}
+            className="group pointer-events-auto cursor-pointer flex flex-col items-center gap-1"
+          >
+            <img src="/images/content/tinna-folder.svg" alt="Portfolio Folder" className="w-16 h-16 md:w-20 md:h-20 drop-shadow-lg transition-transform group-hover:scale-110" />
+          </motion.div>
         </motion.div>
 
         {/* CV Folder (Interactive) */}
-        <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.4 }}
-          onClick={() => setActiveModal('cv')}
-          className="group pointer-events-auto cursor-pointer flex flex-col items-center gap-1"
+        <motion.div
+          animate={{ rotate: [3, -3, 3] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         >
-          <img src="/images/content/cv-folder.svg" alt="CV Folder" className="w-16 h-16 md:w-20 md:h-20 drop-shadow-lg transition-transform group-hover:scale-110" />
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.4 }}
+            onClick={() => setActiveModal('cv')}
+            className="group pointer-events-auto cursor-pointer flex flex-col items-center gap-1"
+          >
+            <img src="/images/content/cv-folder.svg" alt="CV Folder" className="w-16 h-16 md:w-20 md:h-20 drop-shadow-lg transition-transform group-hover:scale-110" />
+          </motion.div>
         </motion.div>
       </div>
 
@@ -201,6 +273,7 @@ const HeroPlate = () => {
                 {activeModal === 'nature' && <div className="p-8 md:p-16"><NatureModal /></div>}
                 {activeModal === 'travel' && <div className="p-8 md:p-16"><TravelModal /></div>}
                 {activeModal === 'socials' && <div className="p-8 md:p-16"><SocialsModal /></div>}
+                {activeModal === 'remember' && <div className="p-8 md:p-16"><RememberModal /></div>}
                 {activeModal === 'cv' && <CVModal />}
                 {activeModal === 'archive' && <TinnaVideoModal />}
                 {/* {activeModal === 'photography' && <div className="p-8 md:p-16"><PhotographyModal /></div>} */}
