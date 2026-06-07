@@ -9,31 +9,31 @@ interface Video {
   iframeCode: string;
 }
 
-const CareModal = () => {
+const BackstageModal = () => {
   const [videos, setVideos] = useState<Video[]>([]);
   const [activeVideoId, setActiveVideoId] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch('/Videos/Care/careVideos.json')
+    fetch('/Videos/Backstage/backstageVideos.json')
       .then(res => res.json())
       .then(data => setVideos(data))
-      .catch(err => console.error("Failed to load Care videos:", err));
+      .catch(err => console.error("Failed to load Backstage videos:", err));
   }, []);
 
   const activeVideo = videos.find(v => v.id === activeVideoId);
-  const ACCENT_COLOR = "#7AA8BC"; // Amber/Gold for "Daily Glow"
+  const ACCENT_COLOR = "#6b7280"; // Gray/Slate for backstage feel
 
   return (
     <div className="flex flex-col h-full w-full relative">
       
       <div className="mb-10 text-right">
         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-2 italic">
-          Daily<span style={{ color: ACCENT_COLOR }}>Glow</span>
+          Back<span style={{ color: ACCENT_COLOR }}>stage</span>
         </h2>
-        <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">Self-care & wellness</p>
+        <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">Behind the scenes & raw motion</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-5 gap-8 pb-10">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-6 gap-8 pb-10">
         {videos.map((video, idx) => (
           <motion.div
             key={video.id}
@@ -49,18 +49,18 @@ const CareModal = () => {
               alt={video.title} 
               className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent flex flex-col justify-end p-8">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent flex flex-col justify-end pl-1 pb-8">
               <div 
                 className="w-16 h-16 rounded-full flex items-center justify-center mb-6 transform scale-0 group-hover:scale-100 transition-all duration-500 shadow-lg"
                 style={{ backgroundColor: ACCENT_COLOR }}
               >
                 <Play fill="black" size={24} className="ml-1 text-black" strokeWidth={3} />
               </div>
-              <h3 className="text-2xl font-black text-white uppercase tracking-tighter transition-colors group-hover:text-[var(--hover-color)] none group-hover:block hidden">
+              <h3 className="text-xl font-black text-white uppercase tracking-tighter transition-colors group-hover:text-[var(--hover-color)] none group-hover:block hidden">
                 {video.title}
               </h3>
               <p className="text-neutral-400 text-xs font-bold uppercase tracking-widest mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                Watch Routine
+                Watch Behind
               </p>
             </div>
           </motion.div>
@@ -106,4 +106,4 @@ const CareModal = () => {
   );
 };
 
-export default CareModal;
+export default BackstageModal;

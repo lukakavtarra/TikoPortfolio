@@ -10,16 +10,17 @@ import CVModal from './modals/CVModal';
 import TinnaVideoModal from './modals/TinnaVideoModal';
 import RememberModal from './modals/RememberModal';
 import TheStayModal from './modals/TheStayModal';
+import BackstageModal from './modals/BackstageModal';
 
 const MENU_ITEMS = [
   // Angles adjusted to match the exact positions in your screenshot
-  { id: 'food', img: '/images/content/food.svg', label: 'Flavor', angle: -135 },
+  { id: 'food', img: '/images/content/food.svg', label: 'Flavor', angle: -120 },
   { id: 'fashion', img: '/images/content/shirt.svg', label: 'Fashion', angle: -35 },
   { id: 'socials', img: '/images/content/phone.svg', label: 'Socials', angle: 20 },
   { id: 'photography', img: '/images/content/camera.svg', label: 'Photography', angle: 80 },
   { id: 'care', img: '/images/content/comb.png', label: 'Daily Glow', angle: 135 },
   { id: 'nature', img: '/images/content/flower.svg', label: 'Nature', angle: 180 },
-  { id: 'wine', img: '/images/content/wine.svg', label: 'Wine', angle: 270 },
+  // { id: 'wine', img: '/images/content/wine.svg', label: 'Wine', angle: 270 },
 ];
 
 const HeroPlate = () => {
@@ -83,9 +84,9 @@ const HeroPlate = () => {
 
       {/* Floating Phrases */}
       {/* First phrase higher up on the right */}
-      <div className="absolute top-[20%] md:top-[20%] right-[5%] md:right-[8%] z-40">
+      <div className="absolute top-[20%] md:top-[20%] right-[5%] md:right-[8%] z-50">
         <motion.div
-          animate={{ scale: [1, 1.05, 1], opacity: [0.7, 1, 0.7] }}
+          animate={{ scale: [1, 1.05, 1], opacity: [0.8, 1, 0.8] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           className="relative group cursor-help flex flex-col items-center"
         >
@@ -240,6 +241,7 @@ const HeroPlate = () => {
                     src={item.img} 
                     alt={item.label} 
                     className="w-full h-full object-contain drop-shadow-[0_15px_15px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all duration-500"
+                    style={item.id === 'food' ? { scale: 0.82 } : {}}
                   />
                   <div className="absolute top-[110%] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span className="text-[12px] md:text-sm font-black tracking-[0.2em] uppercase bg-black/80 px-4 py-2 rounded-full backdrop-blur-sm text-white border border-white/20 shadow-2xl whitespace-nowrap">
@@ -310,6 +312,29 @@ const HeroPlate = () => {
         </motion.div>
       </div>
 
+      {/* Trash Bin - Bottom Right Corner */}
+      <div className="absolute bottom-8 right-8 z-50 pointer-events-none">
+        <motion.div
+          animate={{ rotate: [-2, 2, -2], y: [0, -5, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.6 }}
+            onClick={() => setActiveModal('backstage')}
+            className="relative group pointer-events-auto cursor-pointer flex flex-col items-center gap-1"
+          >
+            <img src="/images/content/trash bin.png" alt="Backstage Trash Bin" className="w-13 h-16 md:w-20 md:h-24 drop-shadow-2xl transition-transform group-hover:scale-110" />
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+              <span className="text-[10px] md:text-xs font-black uppercase tracking-widest bg-black/80 px-3 py-1.5 rounded-full backdrop-blur-md text-white border border-white/20 shadow-xl whitespace-nowrap">
+                Backstage
+              </span>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+
       {/* Modals Container */}
       <AnimatePresence>
         {activeModal && (
@@ -345,6 +370,7 @@ const HeroPlate = () => {
                 {activeModal === 'cv' && <CVModal />}
                 {activeModal === 'archive' && <TinnaVideoModal />}
                 {activeModal === 'thestay' && <div className="p-8 md:p-16"><TheStayModal /></div>}
+                {activeModal === 'backstage' && <div className="p-8 md:p-16"><BackstageModal /></div>}
                 {/* {activeModal === 'photography' && <div className="p-8 md:p-16"><PhotographyModal /></div>} */}
               </div>
             </motion.div>
