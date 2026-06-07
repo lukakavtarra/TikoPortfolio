@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X } from 'lucide-react';
 
 // Import the data directly from your JSON file
-import VIDEOS from '../Videos/Fashion/fashionVideos.json'; 
+import VIDEOS from '../../../public/Videos/Fashion/fashionVideos.json'; 
+
+const ACCENT_COLOR = "#cb3729"; // Deep red accent color for Fashion
 
 const FashionModal = () => {
   // State to track the currently selected video ID for the popup
@@ -19,7 +21,7 @@ const FashionModal = () => {
       {/* HEADER SECTION */}
       <div className="mb-10 text-right">
         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-2 italic">
-          Clot<span className="text-[#39441F]">hing</span>
+          Look <span style={{ color: ACCENT_COLOR }}>Book</span>
         </h2>
         {/* <div className="w-20 h-2 bg-[#39441F] ml-auto mb-4"></div> */}
         <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">Aesthetics, style & motion</p>
@@ -47,7 +49,7 @@ const FashionModal = () => {
               <div className="w-16 h-16 bg-[#39441F] rounded-full flex items-center justify-center mb-6 transform scale-0 group-hover:scale-100 transition-all duration-500 shadow-[0_0_30px_rgba(255,0,127,0.4)]">
                 <Play fill="white" size={24} className="ml-1 text-white" strokeWidth={3} />
               </div>
-              <h3 className="text-2xl font-black text-white uppercase tracking-tighter group-hover:text-[#39441F] transition-colors">
+              <h3 className="text-2xl font-black text-white uppercase tracking-tighter group-hover:text-[#cb3729] transition-colors">
                 {video.title}
               </h3>
               <p className="text-neutral-400 text-xs font-bold uppercase tracking-widest mt-1 opacity-0 group-hover:opacity-100 transition-opacity">

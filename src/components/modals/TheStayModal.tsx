@@ -1,39 +1,45 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X } from 'lucide-react';
 
-// Nature video data following the same schema as Fashion
-import VIDEOS from '../../../public/Videos/Nature/natureVideos.json';
+interface Video {
+  id: number;
+  title: string;
+  thumbnail: string;
+  iframeCode: string;
+}
 
-const NatureModal = () => {
-  // State to track the currently selected video ID for the popup
+const TheStayModal = () => {
+  const [videos, setVideos] = useState<Video[]>([]);
   const [activeVideoId, setActiveVideoId] = useState<number | null>(null);
 
-  // Find the full video object based on the active ID
-  const activeVideo = VIDEOS.find(v => v.id === activeVideoId);
+  useEffect(() => {
+    fetch('../../public/Videos/TheStay/theStayVideos.json')
+      .then(res => res.json())
+      .then(data => setVideos(data))
+      .catch(err => console.error("Failed to load The Stay videos:", err));
+  }, []);
 
-  // Accent color for Nature (Cyan blue as per previous version)
-  const ACCENT_COLOR = "#35691C";
+  const activeVideo = videos.find(v => v.id === activeVideoId);
+  const ACCENT_COLOR = "#8e0000"; // Cyan
 
   return (
     <div className="flex flex-col h-full w-full relative">
       
-      {/* HEADER SECTION - Replicated from FashionModal */}
-      <div className="mb-10 text-right">
+      <div className="mb-10 text-left">
         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-2 italic">
-          Open <span style={{ color: ACCENT_COLOR }}>Air</span>
+          The <span style={{ color: ACCENT_COLOR }}>Stay</span>
         </h2>
-        <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">The beauty of the outdoors & motion</p>
+        <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">A Unique Guesthouse Experience</p>
       </div>
 
-      {/* GRID SECTION - Replicated from FashionModal */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
-        {VIDEOS.map((video, idx) => (
+        {videos.map((video, idx) => (
           <motion.div
             key={video.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.15 }}
+            transition={{ delay: idx * 0.1 }}
             className="group relative rounded-[2rem] overflow-hidden bg-neutral-900 cursor-pointer aspect-[9/16] border-2 border-neutral-800 transition-all duration-500 shadow-2xl hover:border-[var(--hover-color)]"
             style={{ '--hover-color': ACCENT_COLOR } as any}
             onClick={() => setActiveVideoId(video.id)}
@@ -50,18 +56,17 @@ const NatureModal = () => {
               >
                 <Play fill="black" size={24} className="ml-1 text-black" strokeWidth={3} />
               </div>
-              <h3 className="text-2xl font-black text-white uppercase tracking-tighter transition-colors group-hover:text-[var(--hover-color)] group-hover:block hidden">
+              <h3 className="text-2xl font-black text-white uppercase tracking-tighter transition-colors group-hover:text-[var(--hover-color)] none group-hover:block hidden">
                 {video.title}
               </h3>
               <p className="text-neutral-400 text-xs font-bold uppercase tracking-widest mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                Watch Production
+                Watch Experience
               </p>
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* FULLSCREEN POPUP MODAL - Replicated from FashionModal */}
       <AnimatePresence>
         {activeVideo && (
           <motion.div
@@ -101,4 +106,4 @@ const NatureModal = () => {
   );
 };
 
-export default NatureModal;
+export default TheStayModal;

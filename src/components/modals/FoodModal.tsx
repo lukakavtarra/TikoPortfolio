@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X } from 'lucide-react';
 
 // Import the data directly from your JSON file
-import VIDEOS from '../Videos/Food/foodVideos.json'; 
+import VIDEOS from '../../../public/Videos/Food/foodVideos.json';
 
 const FoodModal = () => {
   // State to track the currently selected video ID for the popup
@@ -13,7 +13,7 @@ const FoodModal = () => {
   const activeVideo = VIDEOS.find(v => v.id === activeVideoId);
 
   // Accent color for Food (Lime green as per previous version)
-  const ACCENT_COLOR = "#bfff00";
+  const ACCENT_COLOR = "#f3be2c";
 
   return (
     <div className="flex flex-col h-full w-full relative">
@@ -21,7 +21,7 @@ const FoodModal = () => {
       {/* HEADER SECTION - Replicated from FashionModal */}
       <div className="mb-10 text-right">
         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-2 italic">
-          Fo<span style={{ color: ACCENT_COLOR }}>od</span>
+          Flav<span style={{ color: ACCENT_COLOR }}>ors</span>
         </h2>
         <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">Visual gastronomy & storytelling</p>
       </div>
@@ -41,7 +41,7 @@ const FoodModal = () => {
             <img 
               src={video.thumbnail} 
               alt={video.title} 
-              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent flex flex-col justify-end pl-2 pb-8">
               <div 
@@ -50,7 +50,7 @@ const FoodModal = () => {
               >
                 <Play fill="black" size={24} className="ml-1 text-black" strokeWidth={3} />
               </div>
-              <h3 className="text-2xl font-black text-white uppercase tracking-tighter transition-colors group-hover:text-[var(--hover-color)]">
+              <h3 className="text-2xl font-black text-white uppercase tracking-tighter transition-colors group-hover:text-[var(--hover-color)] group-hover:block hidden">
                 {video.title}
               </h3>
               <p className="text-neutral-400 text-xs font-bold uppercase tracking-widest mt-1 opacity-0 group-hover:opacity-100 transition-opacity">

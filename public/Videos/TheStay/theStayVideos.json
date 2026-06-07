@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Afisha Bubbles",
+    "thumbnail": "/images/thestaymodal/Afisha bubbles.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/lz23MzcMbLU\" title=\"Afisha Bubbles\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 2,
+    "title": "Afisha scroll",
+    "thumbnail": "/images/thestaymodal/Afisha scroll.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/EC66mGfsUeA\" title=\"Afisha scroll\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 3,
+    "title": "Afisha Random",
+    "thumbnail": "/images/thestaymodal/Afisha Random.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/hf72h2OqBww\" title=\"Afisha Random\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 4,
+    "title": "Afisha Coct",
+    "thumbnail": "/images/thestaymodal/Afisha coct.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/wQwgijPfEao\" title=\"Afisha Coct\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 5,
+    "title": "Makola",
+    "thumbnail": "/images/thestaymodal/Makola.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/xFagt64W0XU\" title=\"Makola COC1\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 6,
+    "title": "TATUZA",
+    "thumbnail": "/images/thestaymodal/Tatuza.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/evMY_Mfejg8\" title=\"TATUZA\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 7,
+    "title": "Sushi Room R",
+    "thumbnail": "/images/thestaymodal/Sushi Room.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/yzsYtmp7CQo\" title=\"Sushi Room R\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  },
+  {
+    "id": 8,
+    "title": "The Telegraph Hotel vertic",
+    "thumbnail": "/images/thestaymodal/Telegraph.png",
+    "iframeCode": "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/oaCx-1dpg3w\" title=\"The Telegraph Hotel vertic\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+  }
+]

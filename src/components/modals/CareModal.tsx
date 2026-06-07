@@ -6,12 +6,12 @@ const VIDEOS = [
   { id: 2, title: 'Island Escapes', thumbnail: 'https://images.unsplash.com/photo-1505051508008-923feaf0f13a?auto=format&fit=crop&q=80&w=600&h=400' },
 ];
 
-const TravelModal = () => {
+const CareModal = () => {
   return (
     <div className="flex flex-col h-full w-full">
       <div className="mb-10 text-center">
         <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-2 italic">
-          Travel <span className="text-[#ff5e00]">Logs</span>
+          Care <span className="text-[#ff5e00]">Logs</span>
         </h2>
         <div className="w-32 h-1 bg-gradient-to-r from-transparent via-[#ff5e00] to-transparent mx-auto mb-6"></div>
         <p className="text-neutral-400 font-bold uppercase tracking-[0.3em] text-[10px]">Cinematic journeys globally</p>
@@ -44,4 +44,4 @@ const TravelModal = () => {
   );
 };
 
-export default TravelModal;
+export default CareModal;

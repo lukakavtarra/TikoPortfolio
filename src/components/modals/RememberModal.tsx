@@ -1,24 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X } from 'lucide-react';
 
-// Import the data directly from the newly created JSON file
-import VIDEOS from '../Videos/Remember/rememberVideos.json';
+interface Video {
+  id: number;
+  title: string;
+  thumbnail: string;
+  iframeCode: string;
+}
 
 const RememberModal = () => {
-  // State to track the currently selected video ID for the popup
+  const [videos, setVideos] = useState<Video[]>([]);
   const [activeVideoId, setActiveVideoId] = useState<number | null>(null);
 
-  // Find the full video object based on the active ID
-  const activeVideo = VIDEOS.find(v => v.id === activeVideoId);
+  useEffect(() => {
+    fetch('/Videos/Remember/rememberVideos.json')
+      .then(res => res.json())
+      .then(data => setVideos(data))
+      .catch(err => console.error("Failed to load Remember videos:", err));
+  }, []);
 
-  // Accent color for Remember (Rose/Pink to match your text-rose-500 styling)
+  const activeVideo = videos.find(v => v.id === activeVideoId);
   const ACCENT_COLOR = "#f43f5e"; 
 
   return (
     <div className="flex flex-col h-full w-full relative">
       
-      {/* HEADER SECTION */}
       <div className="mb-10 text-right">
         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-2 italic">
           Remem<span style={{ color: ACCENT_COLOR }}>ber</span>
@@ -26,9 +33,8 @@ const RememberModal = () => {
         <p className="text-neutral-400 font-bold uppercase tracking-widest text-[10px]">Memories & Milestones</p>
       </div>
 
-      {/* GRID SECTION */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
-        {VIDEOS.map((video, idx) => (
+        {videos.map((video, idx) => (
           <motion.div
             key={video.id}
             initial={{ opacity: 0, y: 20 }}
@@ -50,7 +56,7 @@ const RememberModal = () => {
               >
                 <Play fill="black" size={24} className="ml-1 text-black" strokeWidth={3} />
               </div>
-              <h3 className="text-2xl font-black text-white uppercase tracking-tighter transition-colors group-hover:text-[var(--hover-color)]">
+              <h3 className="text-2xl font-black text-white uppercase tracking-tighter transition-colors group-hover:text-[var(--hover-color)] none group-hover:block hidden">
                 {video.title}
               </h3>
               <p className="text-neutral-400 text-xs font-bold uppercase tracking-widest mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -61,7 +67,6 @@ const RememberModal = () => {
         ))}
       </div>
 
-      {/* FULLSCREEN POPUP MODAL */}
       <AnimatePresence>
         {activeVideo && (
           <motion.div
