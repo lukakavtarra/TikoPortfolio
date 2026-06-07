@@ -14,7 +14,7 @@ const TheStayModal = () => {
   const [activeVideoId, setActiveVideoId] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch('../../public/Videos/TheStay/theStayVideos.json')
+    fetch('/Videos/TheStay/theStayVideos.json')
       .then(res => res.json())
       .then(data => setVideos(data))
       .catch(err => console.error("Failed to load The Stay videos:", err));
