@@ -401,7 +401,7 @@ const HeroPlate = () => {
             return (
               <motion.button
                 key={item.id}
-                style={{ x: staticX, y: staticY, willChange: 'transform' }}
+                style={{ x: staticX, y: staticY }}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8 + index * 0.1 }}
@@ -411,11 +411,11 @@ const HeroPlate = () => {
                   e.stopPropagation();
                   handleIconClick(item.id);
                 }}
-                className="absolute z-20 w-25 h-25 md:w-40 md:h-40 group cursor-pointer pointer-events-auto outline-none"
+                className="absolute z-20 w-25 h-25 md:w-40 md:h-40 group cursor-pointer pointer-events-auto outline-none bg-transparent appearance-none border-0 p-0"
               >
                 {/* Counter-rotate each icon so it stays perfectly upright */}
                 <motion.div
-                  style={{ rotate: counterRotation, willChange: 'transform' }}
+                  style={{ rotate: counterRotation }}
                   className="w-full h-full relative flex items-center justify-center"
                 >
                   <img
@@ -423,7 +423,7 @@ const HeroPlate = () => {
                     alt={item.label}
                     decoding="async"
                     draggable={false}
-                    className="w-full h-full object-contain drop-shadow-[0_15px_15px_rgba(0,0,0,0.5)] md:group-hover:drop-shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-transform duration-300"
+                    className="w-full h-full object-contain md:drop-shadow-[0_15px_15px_rgba(0,0,0,0.5)] md:group-hover:drop-shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-transform duration-300"
                     style={item.id === 'food' ? { scale: 0.82 } : {}}
                   />
                   <div className="absolute top-[110%] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
