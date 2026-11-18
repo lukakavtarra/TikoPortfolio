@@ -6,20 +6,17 @@ interface SocialsModalProps {
 }
 
 const SocialsModal: React.FC<SocialsModalProps> = ({ onClose }) => {
-  const instagramVideoSrc = '/images/socials/instagram.mp4'; 
-  
-  // 1. Create a reference to control the video directly
+  const instagramVideoSrc = '/images/socials/instagram.mp4';
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Explicitly acknowledge onClose
+    void onClose;
   }, [onClose]);
 
-  // 2. Force autoplay on mount (helps bypass strict browser policies)
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch((err) => {
-        console.warn("Autoplay prevented by browser:", err);
+        console.warn('Autoplay prevented by browser:', err);
       });
     }
   }, []);
@@ -29,21 +26,19 @@ const SocialsModal: React.FC<SocialsModalProps> = ({ onClose }) => {
       initial={{ scale: 0.8, opacity: 0, y: 20 }}
       animate={{ scale: 1, opacity: 1, y: 0 }}
       exit={{ scale: 0.8, opacity: 0, y: 20 }}
-      transition={{ duration: 0.3, type: "spring", bounce: 0.4 }}
-      className="relative h-[85vh] max-w-[95vw] aspect-[15/19] bg-transparent rounded-[2rem] shadow-2xl overflow-hidden mx-auto"
-      onClick={(e) => e.stopPropagation()} 
+      transition={{ duration: 0.3, type: 'spring', bounce: 0.4 }}
+      className="relative h-[75dvh] md:h-[85vh] max-w-[95vw] aspect-[15/19] bg-transparent rounded-[2rem] shadow-2xl overflow-hidden mx-auto"
+      onClick={(e) => e.stopPropagation()}
     >
-      
-      <a 
-        href="https://www.instagram.com/tikobakuradzee/" 
-        target="_blank" 
+      <a
+        href="https://www.instagram.com/tikobakuradzee/"
+        target="_blank"
         rel="noopener noreferrer"
         className="absolute inset-0 block w-full h-full cursor-pointer group"
       >
         <video
-          ref={videoRef} // Attach the ref
+          ref={videoRef}
           onEnded={() => {
-            // 3. THE FIX: When the video ends, manually reset and play
             if (videoRef.current) {
               videoRef.current.currentTime = 0;
               videoRef.current.play();
@@ -51,17 +46,16 @@ const SocialsModal: React.FC<SocialsModalProps> = ({ onClose }) => {
           }}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           src={instagramVideoSrc}
-          loop // Keep the native attribute as a fallback
+          loop
           autoPlay
           muted
           playsInline
           title="Instagram Video"
         />
-        
+
         {/* Subtle hover effect */}
         <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-300" />
       </a>
-
     </motion.div>
   );
 };
