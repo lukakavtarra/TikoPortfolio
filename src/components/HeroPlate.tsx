@@ -19,7 +19,6 @@ import RememberModal from './modals/RememberModal';
 import TheStayModal from './modals/TheStayModal';
 import BackstageModal from './modals/BackstageModal';
 import MandarinModal from './modals/MandarinModal';
-import AIModal from './modals/AIModal';
 
 const MENU_ITEMS = [
   // Angles adjusted to match the exact positions in your screenshot
@@ -215,20 +214,20 @@ const HeroPlate = () => {
             className="w-16 h-16 md:w-24 md:h-24 object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-110"
           />
           <div
-            className={`absolute top-[110%] left-1/2 -translate-x-1/2 md:left-auto md:right-1/2 md:translate-x-1/2 transition-all duration-300 pointer-events-none w-36 sm:w-44 md:w-56 z-50 origin-top ${
+            className={`absolute top-[110%] left-1/2 -translate-x-1/2 md:left-auto md:right-1/2 md:translate-x-1/2 transition-all duration-300 pointer-events-none w-32 sm:w-36 md:w-56 z-50 origin-top ${
               activePhrase === 1
                 ? 'opacity-100'
                 : 'opacity-0 md:group-hover:opacity-100'
             }`}
           >
-            <div className="bg-[#fcfaf2] p-3.5 md:p-4 md:pb-5 pb-4 rounded-sm shadow-2xl border border-[#e5e0d8] relative transform rotate-2">
-              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-10 h-3 bg-red-400/80 rotate-[-3deg] shadow-sm" />
-              <div className="absolute inset-0 top-6 bottom-4 pointer-events-none flex flex-col justify-between opacity-10">
+            <div className="bg-[#fcfaf2] p-2.5 pb-3 md:p-4 md:pb-5 rounded-sm shadow-2xl border border-[#e5e0d8] relative transform rotate-2">
+              <div className="absolute -top-1.5 md:-top-2 left-1/2 -translate-x-1/2 w-7 h-2 md:w-10 md:h-3 bg-red-400/80 rotate-[-3deg] shadow-sm" />
+              <div className="absolute inset-0 top-5 md:top-6 bottom-3 md:bottom-4 pointer-events-none flex flex-col justify-between opacity-10">
                 <div className="w-full h-px bg-blue-600" />
                 <div className="w-full h-px bg-blue-600" />
                 <div className="w-full h-px bg-blue-600" />
               </div>
-              <span className="relative z-10 text-[11px] md:text-[13px] font-bold text-neutral-800 leading-relaxed font-serif block text-center">
+              <span className="relative z-10 text-[9.5px] md:text-[13px] font-bold text-neutral-800 leading-snug md:leading-relaxed font-serif block text-center">
                 Trying to find individuality everywhere i go
               </span>
             </div>
@@ -259,20 +258,20 @@ const HeroPlate = () => {
             className="w-16 h-16 md:w-24 md:h-24 object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-110"
           />
           <div
-            className={`absolute top-[110%] left-1/2 -translate-x-1/2 md:left-auto md:right-1/2 md:translate-x-1/2 transition-all duration-300 pointer-events-none w-36 sm:w-44 md:w-56 z-50 origin-top ${
+            className={`absolute top-[110%] left-1/2 -translate-x-1/2 md:left-auto md:right-1/2 md:translate-x-1/2 transition-all duration-300 pointer-events-none w-32 sm:w-36 md:w-56 z-50 origin-top ${
               activePhrase === 2
                 ? 'opacity-100'
                 : 'opacity-0 md:group-hover:opacity-100'
             }`}
           >
-            <div className="bg-[#fcfaf2] p-3.5 md:p-4 md:pb-5 pb-4 rounded-sm shadow-2xl border border-[#e5e0d8] relative transform -rotate-2">
-              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-10 h-3 bg-red-400/80 rotate-[3deg] shadow-sm" />
-              <div className="absolute inset-0 top-6 bottom-4 pointer-events-none flex flex-col justify-between opacity-10">
+            <div className="bg-[#fcfaf2] p-2.5 pb-3 md:p-4 md:pb-5 rounded-sm shadow-2xl border border-[#e5e0d8] relative transform -rotate-2">
+              <div className="absolute -top-1.5 md:-top-2 left-1/2 -translate-x-1/2 w-7 h-2 md:w-10 md:h-3 bg-red-400/80 rotate-[3deg] shadow-sm" />
+              <div className="absolute inset-0 top-5 md:top-6 bottom-3 md:bottom-4 pointer-events-none flex flex-col justify-between opacity-10">
                 <div className="w-full h-px bg-blue-600" />
                 <div className="w-full h-px bg-blue-600" />
                 <div className="w-full h-px bg-blue-600" />
               </div>
-              <span className="relative z-10 text-[11px] md:text-[13px] font-bold text-neutral-800 leading-relaxed font-serif block text-center">
+              <span className="relative z-10 text-[9.5px] md:text-[13px] font-bold text-neutral-800 leading-snug md:leading-relaxed font-serif block text-center">
                 To be everywhere all at once
               </span>
             </div>
@@ -342,6 +341,30 @@ const HeroPlate = () => {
         ref={plateRef}
         className="relative w-[360px] h-[360px] md:w-[1200px] md:h-[1200px] mt-auto mb-12 md:my-0 flex items-center justify-center"
       >
+        {/* Mobile-only iOS text-selection style hint positioned right on top of the plate */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          style={{ y: isMobile ? (isMaxIphone15Pro ? -56 : -86) : 0 }}
+          className="md:hidden absolute -top-5 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex justify-center"
+        >
+          <span
+            className="relative inline-block px-2.5 py-0.5 bg-[#007AFF]/30 text-[11px] font-medium leading-snug tracking-wide text-white text-center whitespace-nowrap drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]"
+            style={{ fontFamily: 'Andalemono, monospace' }}
+          >
+            <span className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#007AFF]">
+              <span className="absolute -top-[7px] -left-[3.75px] w-[9px] h-[9px] rounded-full bg-[#007AFF]" />
+            </span>
+            scroll to spin
+            <br />
+            tap to open
+            <span className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#007AFF]">
+              <span className="absolute -bottom-[7px] -right-[3.75px] w-[9px] h-[9px] rounded-full bg-[#007AFF]" />
+            </span>
+          </span>
+        </motion.div>
+
         {/* The Plate Asset (Scaled up and shifted slightly up on mobile, moved lower on <= iPhone 15 Pro, 100% original on desktop) */}
         <motion.div
           initial={{ scale: 0, rotate: -180 }}
@@ -388,7 +411,7 @@ const HeroPlate = () => {
                   e.stopPropagation();
                   handleIconClick(item.id);
                 }}
-                className="absolute z-20 w-28 h-28 md:w-40 md:h-40 group cursor-pointer pointer-events-auto outline-none"
+                className="absolute z-20 w-25 h-25 md:w-40 md:h-40 group cursor-pointer pointer-events-auto outline-none"
               >
                 {/* Counter-rotate each icon so it stays perfectly upright */}
                 <motion.div
@@ -446,7 +469,7 @@ const HeroPlate = () => {
       </div>
 
       {/* Desktop Folders - Top Left Corner (Aligned as a column on both mobile and desktop) */}
-      <div className="absolute top-24 md:top-12 left-4 md:left-12 flex flex-col gap-4 md:gap-8 z-50 pointer-events-none">
+      <div className="absolute top-32 md:top-12 left-4 md:left-12 flex flex-col gap-4 md:gap-8 z-50 pointer-events-none">
         {/* Tinna Folder (Interactive Video) */}
         <motion.div
           animate={{ rotate: [-3, 3, -3] }}
@@ -490,34 +513,30 @@ const HeroPlate = () => {
             />
           </motion.div>
         </motion.div>
-
-        {/* AI Icon (Interactive YouTube Video - macOS video file style) */}
-        <motion.div
-          animate={{ rotate: [-3, 3, -3] }}
-          transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 0.85, x: 0 }}
-            transition={{ delay: 1.5 }}
-            onPointerDown={(e) => e.stopPropagation()}
-            onClick={() => setActiveModal('ai')}
-            className="relative group pointer-events-auto cursor-pointer touch-manipulation transition-opacity hover:opacity-100"
-          >
-            <div className="flex flex-col items-center gap-1.5 md:gap-2 transition-transform duration-200 group-hover:scale-110">
-              <img
-                src="/images/content/AI.jpeg"
-                alt="AI.mov"
-                decoding="async"
-                className="w-10 h-[23px] md:w-17 md:h-[39px] object-cover rounded-[6px] md:rounded-[9px] brightness-90 group-hover:brightness-100 transition-all shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
-              />
-              <span className="text-[9px] md:text-xs font-semibold text-white/95 leading-none tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.85)] select-none">
-                AI.mov
-              </span>
-            </div>
-          </motion.div>
-        </motion.div>
       </div>
+
+      {/* Desktop-only iOS text-selection style hint - Center Left Side */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        className="hidden md:flex absolute top-[64%] -translate-y-1/2 left-20 z-40 pointer-events-none"
+      >
+        <span
+          className="relative inline-block px-3 py-1 bg-[#007AFF]/30 text-xs font-medium leading-snug tracking-wide text-white text-center whitespace-nowrap drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]"
+          style={{ fontFamily: 'Andalemono, monospace' }}
+        >
+          <span className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[#007AFF]">
+            <span className="absolute -top-[7px] -left-[3.75px] w-[9px] h-[9px] rounded-full bg-[#007AFF]" />
+          </span>
+          scroll to spin
+          <br />
+          tap to open
+          <span className="absolute right-0 top-0 bottom-0 w-[1.5px] bg-[#007AFF]">
+            <span className="absolute -bottom-[7px] -right-[3.75px] w-[9px] h-[9px] rounded-full bg-[#007AFF]" />
+          </span>
+        </span>
+      </motion.div>
 
       {/* Trash Bin - Bottom Right Corner */}
       <div className="absolute bottom-8 right-8 z-50 pointer-events-none">
@@ -623,7 +642,6 @@ const HeroPlate = () => {
                 {activeModal === 'mandarin' && (
                   <MandarinModal onClose={closeModal} />
                 )}
-                {activeModal === 'ai' && <AIModal />}
               </div>
             </motion.div>
           </motion.div>
